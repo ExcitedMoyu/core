@@ -1,7 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven'
-//apply from: 'mavenpublish.gradle'
-//apply plugin: 'maven-publish'
+//apply plugin: 'maven'
+apply from: 'mavenpublish.gradle'
 
 android {
     compileSdkVersion 30
@@ -39,22 +38,22 @@ dependencies {
 
 }
 
-uploadArchives {
-    configuration = configurations.archives
-    repositories {
-        mavenDeployer {
-            repository(url: 'http://127.0.0.1:8081/repository/maven-releases/') {
-                authentication(userName: 'admin', password: 'admin')
-            }
-            pom.project {
-                version '2.0.6'
-                artifactId 'core'
-                groupId 'com.smasher.primary'
-                packaging 'aar'
-                description 'init version 2.0.6'
-            }
-        }
-    }
-}
+//uploadArchives {
+//    configuration = configurations.archives
+//    repositories {
+//        mavenDeployer {
+//            repository(url: 'http://127.0.0.1:8081/repository/maven-releases/') {
+//                authentication(userName: 'admin', password: 'admin')
+//            }
+//            pom.project {
+//                version '2.0.6'
+//                artifactId 'core'
+//                groupId 'com.smasher.primary'
+//                packaging 'aar'
+//                description 'init version 2.0.6'
+//            }
+//        }
+//    }
+//}
 
 
